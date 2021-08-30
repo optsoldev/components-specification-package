@@ -4,7 +4,7 @@
     {
         private readonly ISpecification<T> wrapped;
 
-        public NotSpecification(ISpecification<T> wrapped)
+        public NotSpecification(ISpecification<T> not)
         {
             this.wrapped = not;
         }
