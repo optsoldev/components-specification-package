@@ -6,13 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".items", ".items", "{3F91A672-0ADE-4AB3-B36F-A1AFD7985C28}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
-		asserts\Specification_UML.png = asserts\Specification_UML.png
 		version-bump.ps1 = version-bump.ps1
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Optsol.Components.Specification", "src\Optsol.Components.Specification\Optsol.Components.Specification.csproj", "{D007142C-1D4E-4BE3-8AB9-590C31EB1F0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optsol.Components.Specification.Test", "test\Optsol.Components.Specification.Test\Optsol.Components.Specification.Test.csproj", "{AABF54A8-D990-40E1-955D-BE781DBB458E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Optsol.Components.Specification.Test", "test\Optsol.Components.Specification.Test\Optsol.Components.Specification.Test.csproj", "{AABF54A8-D990-40E1-955D-BE781DBB458E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
