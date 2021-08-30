@@ -54,10 +54,16 @@ class NotSpecification {
     + bool IsSatisfiedBy(T candidate)
 }
 
+class ExpressionSpecification {
+    - Func<T, bool> expresion;
+    + bool IsSatisfiedBy(T candidate)
+}
+
 CompositeSpecification <-- AndSpecification
 CompositeSpecification <-- AndNotSpecification
 CompositeSpecification <-- OrSpecification
 CompositeSpecification <-- OrNotSpecification
 CompositeSpecification <-- NotSpecification
+CompositeSpecification <-- ExpressionSpecification
 
 @enduml
