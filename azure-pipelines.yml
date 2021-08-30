@@ -39,7 +39,7 @@ steps:
   displayName: 'Rodando Testes Automatizados'
   inputs:
     command: 'test'
-    projects: '**/*.Test.*/*.csproj'
+    projects: '**/*Test*.csproj'
     arguments: '-c $(buildConfiguration) --no-restore --no-build --collect "Code coverage"'
 
 - task: DotNetCoreCLI@2
@@ -48,7 +48,7 @@ steps:
     command: 'custom'
     projects: |
       **/src/*Components*/*.csproj
-      !**/*.Test.*/*.csproj
+      !**/*Test*.csproj
     custom: 'pack'
     arguments: '-c $(buildConfiguration) --no-restore --no-build -o packages'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
