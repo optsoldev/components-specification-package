@@ -1,0 +1,63 @@
+@startuml specification-pattern
+
+interface ISpefification<T> {
+    + bool IsSatisfiedBy(T candidate)
+    + ISpecification<T> specification And(ISpecification<T> specification)
+    + ISpecification<T> specification AndNot(ISpecification<T> specification)
+    + ISpecification<T> specification Or(ISpecification<T> specification)
+    + ISpecification<T> specification OrNot(ISpecification<T> specification)
+    + ISpecification<T> specification Not(T candidate)
+}
+
+abstract class CompositeSpecification {
+    {abstract} bool IsSatisfiedBy(T candidate)
+    + ISpecification<T> specification And(ISpecification<T> specification)
+    + ISpecification<T> specification AndNot(ISpecification<T> specification)
+    + ISpecification<T> specification Or(ISpecification<T> specification)
+    + ISpecification<T> specification OrNot(ISpecification<T> specification)
+    + ISpecification<T> specification Not(T candidate)
+}
+
+ISpefification *-- CompositeSpecification
+
+class AndSpecification {
+    - ISpecification<T> leftCondition
+    - ISpecification<T> rightCondition
+    + AndSpecification(ISpecification<T> leftCondition, ISpecification<T> rightCondition)
+    + bool IsSatisfiedBy(T candidate)
+}
+
+class AndNotSpecification {
+    - ISpecification<T> rightCondition
+    - ISpecification<T> leftCondition
+    + AndNotSpecification(ISpecification<T> leftCondition, ISpecification<T> rightCondition)
+    + bool IsSatisfiedBy(T candidate)
+}
+
+class OrSpecification {
+    - ISpecification<T> rightCondition
+    - ISpecification<T> leftCondition
+    + OrSpecification(ISpecification<T> leftCondition, ISpecification<T> rightCondition)
+    + bool IsSatisfiedBy(T candidate)
+}
+
+class OrNotSpecification {
+    - ISpecification<T> rightCondition
+    - ISpecification<T> leftCondition
+    + OrNotSpecification(ISpecification<T> leftCondition, ISpecification<T> rightCondition)
+    + bool IsSatisfiedBy(T candidate)
+}
+
+class NotSpecification {
+    - ISpecification<T> wrapped
+    + NotSpecification(ISpecification<T> leftCondition, ISpecification<T> rightCondition)
+    + bool IsSatisfiedBy(T candidate)
+}
+
+CompositeSpecification <-- AndSpecification
+CompositeSpecification <-- AndNotSpecification
+CompositeSpecification <-- OrSpecification
+CompositeSpecification <-- OrNotSpecification
+CompositeSpecification <-- NotSpecification
+
+@enduml
