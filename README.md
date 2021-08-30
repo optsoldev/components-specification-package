@@ -6,7 +6,7 @@ Um padrão de especificação descreve uma regra de negócios que pode ser combi
 Como consequência da composição do tempo de execução da lógica de negócios / domínio de alto nível, o padrão de especificação é uma ferramenta conveniente para converter critérios de pesquisa de usuário ad-hoc em lógica de baixo nível para serem processados ​​por repositórios.
 
 
-![Specification_UML.png](/asserts/Specification_UML.png)
+![Specification_UML.png](/.asserts/Specification_UML.png)
 
 # Referências
 
