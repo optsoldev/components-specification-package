@@ -50,12 +50,13 @@ class OrNotSpecification {
 
 class NotSpecification {
     - ISpecification<T> wrapped
-    + NotSpecification(ISpecification<T> leftCondition, ISpecification<T> rightCondition)
+    + NotSpecification(ISpecification<T> not)
     + bool IsSatisfiedBy(T candidate)
 }
 
 class ExpressionSpecification {
     - Func<T, bool> expresion;
+    ExpressionSpecification(Func<T, bool> expresion)
     + bool IsSatisfiedBy(T candidate)
 }
 
