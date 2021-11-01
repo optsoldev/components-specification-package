@@ -16,7 +16,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Optsol.Components.Specifica
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Optsol.Components.Specification.Test", "test\Optsol.Components.Specification.Test\Optsol.Components.Specification.Test.csproj", "{AABF54A8-D990-40E1-955D-BE781DBB458E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Nuget", "1. Nuget", "{62586180-B1CA-40B1-9DE7-69A8BF46FABF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Packages", "1. Packages", "{62586180-B1CA-40B1-9DE7-69A8BF46FABF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Internal", "2. Internal", "{21E76E88-003A-469B-B6DD-D877B2BFC6E3}"
 EndProject

@@ -37,7 +37,7 @@ steps:
     projects: '**/*Test*.csproj'
     arguments: '-c $(buildConfiguration) --no-restore --no-build --collect "Code coverage"'
 
-- task: DotNetCoreCLI@2
+- task: DotNetCoreCLI@2 
   displayName: 'Criando Pacotes Nuget'
   inputs:
     command: 'custom'
