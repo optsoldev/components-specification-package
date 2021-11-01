@@ -57,6 +57,8 @@ namespace Optsol.Components.Specification.Test
         public void DeveRetornarPessoasQueNaoTenhaIdade5Ou20()
         {
             //given
+            var naoContemIdades = new int[] { 5, 20 };
+
             ISpecification<Pessoa> pessoaValida = new PessoaValidSpecification();
             ISpecification<Pessoa> pessoaIdade5Ou20 = new PessoaIdade5Ou20ValidSpecification();
 
@@ -68,7 +70,7 @@ namespace Optsol.Components.Specification.Test
             //then
             pessoas.Should().NotBeEmpty();
             pessoas.Should().HaveCount(3);
-            pessoas.All(a => a.Idade != 5 || a.Idade != 20).Should().BeTrue();
+            pessoas.All(a => !naoContemIdades.Contains(a.Idade)).Should().BeTrue();
         }
 
         [Trait("Specification", "Custom")]
@@ -76,7 +78,9 @@ namespace Optsol.Components.Specification.Test
         public void DeveRetornarPessoasComIdade5Ou20Ou70Anos()
         {
             //given
-            int idade = 70;
+            var idade = 70;
+            var naoContemIdades = new int[] { 5, 20, idade };
+
             ISpecification<Pessoa> pessoaIdade5Ou20 = new PessoaIdade5Ou20ValidSpecification();
             ISpecification<Pessoa> pessoaIdade70 = new ExpressionSpecification<Pessoa>(pessoa => pessoa.Idade == idade);
 
@@ -88,7 +92,7 @@ namespace Optsol.Components.Specification.Test
             //then
             pessoas.Should().NotBeEmpty();
             pessoas.Should().HaveCount(3);
-            pessoas.All(a => a.Idade == 5 || a.Idade == 20 || a.Idade == idade).Should().BeTrue();
+            pessoas.All(a => naoContemIdades.Contains(a.Idade)).Should().BeTrue();
         }
 
         [Trait("Specification", "Custom")]
